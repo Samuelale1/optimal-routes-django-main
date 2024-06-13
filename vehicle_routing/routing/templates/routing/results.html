@@ -1,0 +1,22 @@
+<!-- results.html -->
+
+{% extends 'routing/base.html' %}
+
+{% block title %}
+    Route Optimization Results
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Route Optimization Results</h1>
+    <p>Total Distance: {{ route.total_distance }} km</p>
+    <ul>
+        {% for vehicle_num, distance in vehicle_data %}
+            <li>Vehicle {{ vehicle_num }}: {{ distance }} km</li>
+        {% endfor %}
+    </ul>
+    <div id="map" style="height: 500px;">
+        {{ map_html|safe }}
+    </div>
+</div>
+{% endblock %}

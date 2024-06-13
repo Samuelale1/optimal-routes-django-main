@@ -1,0 +1,60 @@
+{% extends 'routing/base.html' %}
+{% load static %} 
+{% block title %}
+    Register - OProutes
+{% endblock %}
+
+{% block content %}
+<style>
+    .body {
+        background-image: url("{% static 'images/routing_map.png' %}");
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 1000px;
+        background-size: cover;
+    }
+    body {
+        overflow: hidden;
+    }
+</style>
+
+<section class="vh-100 body" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem; background-color: #424242;">
+                    <div class="card-body p-5">
+                        <h3 class="mb-5 text-center" style="color: aliceblue;">Sign Up</h3>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <label class="form-label" for="Firstname" style="color: aliceblue;">FirstName</label>
+                            <input type="text" class="form-control form-control-lg" style="background: none; border: 2px solid aliceblue; color: aliceblue;" />
+                        </div>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <label class="form-label" for="Lastname" style="color: aliceblue;">LastName</label>
+                            <input type="text" class="form-control form-control-lg" style="background: none; border: 2px solid aliceblue; color: aliceblue;" />
+                        </div>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <label class="form-label" for="Username" style="color: aliceblue;">UserName</label>
+                            <input type="text" class="form-control form-control-lg" style="background: none; border: 2px solid aliceblue; color: aliceblue;" />
+                        </div>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <label class="form-label" for="typeEmailX-2" style="color: aliceblue;">Email</label>
+                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" style="background: none; border: 2px solid aliceblue; color: aliceblue;" />
+                        </div>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <label class="form-label" for="typePasswordX-2" style="color: aliceblue;">Password</label>
+                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg" style="background: none; border: 2px solid aliceblue; color: aliceblue;" />
+                        </div>
+                        <div style="display: flex; flex-direction: row; gap: 30px;">
+                            <div style="height: 50px; width: 200px; border: 2px solid #508bfc; border-radius: 5px; padding-top: 10px; padding-left: 70px;">
+                                <a href="{% url 'login' %}" style="text-decoration: none; color: aliceblue;">Sign in</a>
+                            </div>
+                            <a href="{% url 'dashboard' %}"><button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block text-center" type="submit" style="width: 200px; box-shadow: 4px 2px 15px #424242;">Sign Up</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

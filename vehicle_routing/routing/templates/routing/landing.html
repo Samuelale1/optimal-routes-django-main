@@ -1,0 +1,120 @@
+{% extends 'routing/base.html' %}
+{% load static %} 
+{% block title %}
+    Landing Page - OProutes
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container px-5">
+        <a class="navbar-brand" href="{% url 'landing' %}">OP<span style="color: #7aacf7;">routes</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'landing' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                <div class="d-none d-lg-flex">
+                    <a href="{% url 'login' %}" class="btn btn-link text-decoration-none" role="button">Login</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary ms-2" role="button">Get started</a>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page Content-->
+<div class="container px-4 px-lg-5">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'images/Planning.jpg' %}" alt="..." /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">Optimize your finances through OProutes</h1>
+            <p>By leveraging the power of optimisation, worry no more about routing and let us take the wheel in driving your finances upwards.</p>
+            <a class="btn btn-primary" href="{% url 'register' %}">Get Started</a>
+        </div>
+    </div>
+    <!-- Call to Action-->
+    <section class="align-items-center ">
+        <div >
+            <div>
+                <h1 class="text-center">
+                    About OP<span style="color: #7aacf7;">routes</span> 
+                </h1>
+            </div>
+        </div>
+        <div class="d-flex  flex-direction-column">
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'images/routing_map.png' %}" alt="..." />
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="font-weight-light">Optimize your finances through OProutes</h1>
+                    <p>OProutes leverages the power of optimisation which is a more complex form of mathematics to create optimal routes to deliver goods for companies. OProutes digitalizes the whole hassle of manual routing of a fleet of vehicles to numerous customers and creates optimal routes that each of this vehicle should follow to minimize cost, reduce the hassle of manually creating routes that might not be the optimal route, and creates real-time map information of the routes this vehicles are to follow.</p>
+                    <a class="btn btn-primary" href="{% url 'register' %}">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <div>
+            <h1 class="text-center">
+                Our Feat<span style="color: #7aacf7;">ures</span>
+            </h1>
+            <p class="text-center fw-normal"> Here are some of our features</p>
+        </div>
+        <div class="col-md-4 mb-5">
+
+            <div class="card h-100">
+
+                <div class="card-body">
+                    <h2 class="card-title">Authorisation and authentication</h2>
+                    <p class="card-text">We offer authorisation and Authentication to prevent vulnerabilities.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'register' %}">Get Started</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Routing Optimisation</h2>
+                    <p class="card-text">Our team leverages optimisation techniques to properly provide the most optimal set of routes based on the number of customers demands and the capacity of each vehicle .</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'register' %}">Get Started</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Crisp Map Routing</h2>
+                    <p class="card-text">Our team also uses real time mapping system in other display the set of optimal routes that were generated for the set of customers .</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'register' %}">Get Started</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5 bg-light">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-10 col-xl-7">
+                    <div class="text-center">
+                        <div class="fs-4 mb-4 fst-italic">"Leveraging advanced optimization algorithms, our solution streamlines your operations and drastically reduces costs, empowering you to make the most of your resources.!"</div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="...">
+                            <div class="fw-bold">
+                                Samuel Ale
+                                <span class="fw-bold text-primary mx-1">/</span>
+                                CEO, OP<span>routes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+</div>
+{% endblock %}

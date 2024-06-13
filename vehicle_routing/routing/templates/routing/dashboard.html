@@ -1,0 +1,51 @@
+{% extends 'routing/base.html' %}
+
+{% block title %}
+    Dashboard - OProutes
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>Dashboard</h1>
+    <button type="button" class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#routeModal">
+        Create Route
+    </button>
+</div>
+
+<div class="modal fade" id="routeModal" tabindex="-1" aria-labelledby="routeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="routeModalLabel">Create Route</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="routeForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="dataset" class="form-label">Upload Dataset</label>
+                        <input class="form-control" type="file" id="dataset" name="dataset" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="num_vehicles" class="form-label">Number of Vehicles</label>
+                        <input type="number" class="form-control" id="num_vehicles" name="num_vehicles" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vehicle_capacity" class="form-label">Vehicle Capacity</label>
+                        <input type="number" class="form-control" id="vehicle_capacity" name="vehicle_capacity" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="algorithm" class="form-label">Choose Algorithm</label>
+                        <select class="form-select" id="algorithm" name="algorithm" required>
+                            <option value="ILP">Integer Linear Programming</option>
+                            <option value="LNS">Large Neighborhood Search</option>
+                            <option value="Tabu">Tabu Search</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Route</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
